@@ -1,14 +1,6 @@
 from time import sleep
 import random
 import os
-#from tkinter import *
-
-# create window
-'''
-master = Tk()
-window = Canvas(master, width=200, height=100)
-window.pack()
-'''
 
 # constants
 grid_size = 25
@@ -24,12 +16,9 @@ class Node:
         self.next_state = 0
     def draw(self):
         if self.state == 1:
-            #color = "red"
             text = "[X]"
         else:
-            #color = "white"
             text = "[ ]"
-        #window.create_rectangle(self.x * cell_size, self.y * cell_size, self.x * cell_size + cell_size, self.y * cell_size + cell_size, fill="%s" % color)
         print("%s" % text, end='')
 
 def find_neighboring_nodes(node_list, node_obj):
@@ -56,7 +45,7 @@ def find_neighboring_nodes(node_list, node_obj):
     return num_neighbors_alive
 
 def main(nodes):
-    # spawn a grid oh yeah!
+    # spawn a grid
     for x in range(grid_size):
         for y in range(grid_size):
             node = Node(x, y, random.choice([0, 0, 0, 1]))
@@ -93,8 +82,6 @@ def main(nodes):
                     if node.x == x and node.y == y:
                         node.draw()
             print("\n")
-
-    #mainloop()
 
 if __name__ == "__main__":
     nodes = []
