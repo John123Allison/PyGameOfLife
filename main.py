@@ -5,7 +5,7 @@ import os
 # constants
 grid_size = 25
 cell_size = 10
-step_length = 2 # in seconds
+step_length = .5 # in seconds
 running = True
 
 class Node:
@@ -16,10 +16,10 @@ class Node:
         self.next_state = 0
     def draw(self):
         if self.state == 1:
-            text = "[X]"
+            text = " ■ "
         else:
-            text = "[ ]"
-        print("%s" % text, end='')
+            text = "   "
+        print("%s" % text, end='')      
 
 def find_neighboring_nodes(node_list, node_obj):
     num_neighbors_alive = 0
